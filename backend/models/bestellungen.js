@@ -9,6 +9,7 @@ var BestellungenSchema = new Schema(
     eingegangenAm: {type: Date, required: true, max: 10},
     preis: {type: String, required: false, max: 150},
     lieferadresse: {type: String, required: false, max: 150},
+    bestellungZeitfenster: {type: String, required: false, max: 150},
     arbeiter: {type: String, required: false, max: 100},
     updated_date: { type: Date, default: Date.now }
   },
