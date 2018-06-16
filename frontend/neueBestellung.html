@@ -13,9 +13,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
     <link rel="stylesheet" href="./assets/css/material-kit.css?v=2.0.3">
     <!-- Documentation extras -->
-    <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link href="./assets/assets-for-demo/demo.css" rel="stylesheet" />
-    <link href="./assets/assets-for-demo/vertical-nav.css" rel="stylesheet" />
 </head>
 
 <body class="index-page ">
@@ -26,34 +23,15 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th class="text-center">#</th>
+                    <th class="text-center">Name</th>
                     <th></th>
-                    <th>Product Name</th>
-                    <th>Type</th>
-                    <th>Qty</th>
-                    <th class="text-right">Price</th>
-                    <th class="text-right">Amount</th>
+                    <th>Beschreibung</th>
+                    <th>Menge</th>
+                    <th>Gewicht</th>
+                    <th>Preis</th>
                 </tr>
             </thead>
             <tbody id="tabelleItem">
-                <tr>
-                    <td class="text-center">1</td>
-                    <td class="text-center">
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox" value="" checked>
-                                <span class="form-check-sign">
-                                    <span class="check"></span>
-                                </span>
-                            </label>
-                        </div>
-                    </td>
-                    <td>Moleskine Agenda</td>
-                    <td>Office</td>
-                    <td>25</td>
-                    <td class="text-right">&#x20AC; 49</td>
-                    <td class="text-right">&#x20AC; 1,225</td>
-                </tr>
             </tbody>
             <tfoot>
               <tr>
@@ -94,13 +72,10 @@
     <script src="./assets/js/plugins/jasny-bootstrap.min.js"></script>
     <!--	Plugin for Small Gallery in Product Page -->
     <script src="./assets/js/plugins/jquery.flexisel.js"></script>
-    <!-- Plugins for presentation and navigation  -->
-    <script src="./assets/assets-for-demo/js/modernizr.js"></script>
-    <script src="./assets/assets-for-demo/js/vertical-nav.js"></script>
+
     <!-- Material Kit Core initialisations of plugins and Bootstrap Material Design Library -->
     <script src="./assets/js/material-kit.js?v=2.0.3"></script>
     <!-- Fixed Sidebar Nav - js With initialisations For Demo Purpose, Don't Include it in your project -->
-    <script src="./assets/assets-for-demo/js/material-kit-demo.js"></script>
     <script>
         $(document).ready(function() {
 
@@ -111,14 +86,14 @@
             materialKit.initSliders();
         });
 
-        axios.get('http://localhost:3000/bestellungen')
+        axios.get('http://localhost:3000/artikel')
         .then(function (response) {
           console.log(response);
           for (index in response.data){
             var item = response.data[index];
             var tr = document.createElement('tr');
             var td = document.createElement('td');
-            td.innerText = item.lieferadresse;
+            td.innerText = item.name;
             tr.append(td);
             var td2 = document.createElement('td');
             td2.innerHTML = "<div class=\"form-check\">\
@@ -130,6 +105,18 @@
                 </label>\
             </div>";
             tr.append(td2);
+            var td3 = document.createElement('td');
+            td3.innerText = item.beschreibung;
+            tr.append(td3);
+            var td4 = document.createElement('td');
+            td4.innerText = item.menge;
+            tr.append(td4);
+            var td5 = document.createElement('td');
+            td5.innerText = item.gewicht;
+            tr.append(td5);
+            var td6 = document.createElement('td');
+            td6.innerText = item.preis + " €";
+            tr.append(td6);
             document.getElementById('tabelleItem').append(tr);
           }
         })
