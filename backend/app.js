@@ -7,7 +7,7 @@ var debug = require('debug');
 var http = require('http');
 
 var bestellungen = require('./routes/bestellungens');
-var user = require('./routes/users');
+var artikel = require('./routes/artikels');
 var app = express();
 
 
@@ -78,7 +78,7 @@ app.use(bodyParser.urlencoded({'extended':'false'}));
 app.set('view engine', 'html');
 //app.use('/filaments', express.static(path.join(__dirname, 'dist')));
 app.use('/bestellungen', bestellungen);
-app.use('/user', user);
+app.use('/artikel', artikel);
 
 
 // catch 404 and forward to error handler
