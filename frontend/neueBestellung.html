@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        Material Kit by Creative Tim
+    </title>
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="./assets/css/material-kit.css?v=2.0.3">
+    <!-- Documentation extras -->
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="./assets/assets-for-demo/demo.css" rel="stylesheet" />
+    <link href="./assets/assets-for-demo/vertical-nav.css" rel="stylesheet" />
+</head>
+
+<body class="index-page ">
+
+    <h1>Bestellung aufgeben</h1>
+    </br>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th class="text-center">#</th>
+                    <th></th>
+                    <th>Product Name</th>
+                    <th>Type</th>
+                    <th>Qty</th>
+                    <th class="text-right">Price</th>
+                    <th class="text-right">Amount</th>
+                </tr>
+            </thead>
+            <tbody id="tabelleItem">
+                <tr>
+                    <td class="text-center">1</td>
+                    <td class="text-center">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="" checked>
+                                <span class="form-check-sign">
+                                    <span class="check"></span>
+                                </span>
+                            </label>
+                        </div>
+                    </td>
+                    <td>Moleskine Agenda</td>
+                    <td>Office</td>
+                    <td>25</td>
+                    <td class="text-right">&#x20AC; 49</td>
+                    <td class="text-right">&#x20AC; 1,225</td>
+                </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                  <td colspan="3"></td>
+                  <td class="td-total">
+                      Total
+                  </td>
+                  <td class="td-price">
+                      <small>&#x20AC;</small>12,999
+                  </td>
+                  <td colspan="2" class="text-right">
+                      <button type="button" id="confirmButton" class="btn btn-info btn-round">Complete Purchase <i class="material-icons">keyboard_arrow_right</i></button>
+                  </td>
+              </tr>
+            </tfoot>
+        </table>
+    </div>
+
+
+    <!--   Core JS Files   -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./assets/js/core/jquery.min.js"></script>
+    <script src="./assets/js/core/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+    <script src="./assets/js/bootstrap-material-design.js"></script>
+    <!--  Google Maps Plugin  -->
+    <!--  Plugin for Date Time Picker and Full Calendar Plugin  -->
+    <script src="./assets/js/plugins/moment.min.js"></script>
+    <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+    <script src="./assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
+    <!--	Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+    <script src="./assets/js/plugins/nouislider.min.js"></script>
+    <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+    <script src="./assets/js/plugins/bootstrap-selectpicker.js"></script>
+    <!--	Plugin for Tags, full documentation here: http://xoxco.com/projects/code/tagsinput/  -->
+    <script src="./assets/js/plugins/bootstrap-tagsinput.js"></script>
+    <!--	Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
+    <script src="./assets/js/plugins/jasny-bootstrap.min.js"></script>
+    <!--	Plugin for Small Gallery in Product Page -->
+    <script src="./assets/js/plugins/jquery.flexisel.js"></script>
+    <!-- Plugins for presentation and navigation  -->
+    <script src="./assets/assets-for-demo/js/modernizr.js"></script>
+    <script src="./assets/assets-for-demo/js/vertical-nav.js"></script>
+    <!-- Material Kit Core initialisations of plugins and Bootstrap Material Design Library -->
+    <script src="./assets/js/material-kit.js?v=2.0.3"></script>
+    <!-- Fixed Sidebar Nav - js With initialisations For Demo Purpose, Don't Include it in your project -->
+    <script src="./assets/assets-for-demo/js/material-kit-demo.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            //init DateTimePickers
+            materialKit.initFormExtendedDatetimepickers();
+
+            // Sliders Init
+            materialKit.initSliders();
+        });
+
+        axios.get('http://localhost:3000/bestellungen')
+        .then(function (response) {
+          console.log(response);
+          for (index in response.data){
+            var item = response.data[index];
+            var tr = document.createElement('tr');
+            var td = document.createElement('td');
+            td.innerText = item.lieferadresse;
+            tr.append(td);
+            var td2 = document.createElement('td');
+            td2.innerHTML = "<div class=\"form-check\">\
+                <label class=\"form-check-label\">\
+                    <input class=\"form-check-input\" type=\"checkbox\" value="+item._id+">\
+                    <span class=\"form-check-sign\">\
+                        <span class=\"check\"></span>\
+                    </span>\
+                </label>\
+            </div>";
+            tr.append(td2);
+            document.getElementById('tabelleItem').append(tr);
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+        document.getElementById('confirmButton').addEventListener("click", function(){
+          document.querySelectorAll('#tabelleItem .form-check-input').forEach(function(e){
+            console.log(e.checked);
+          });
+        });
+
+
+    </script>
+
+</body>
+
+</html>
