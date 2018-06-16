@@ -32,8 +32,19 @@
 
 <body class="profile-page ">
     <nav class="navbar navbar-color-on-scroll navbar-transparent    fixed-top  navbar-expand-lg " color-on-scroll="100" id="sectionsNav">
-        <div class="container"></div>
+        <div class="container">
+          <div class="dropdown show">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              menu
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="home.html">Home</a>
+            </div>
+          </div>
+        </div>
     </nav>
+
     <div class="page-header" data-parallax="true" style="background-image: url('assets/img/mypicture1.jpg');"></div>
     <div class="main main-raised">
         <div class="profile-content">
@@ -68,6 +79,7 @@
 
     </footer>
     <!--   Core JS Files   -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="assets/js/map.js"></script>
     <script src="assets/js/core/jquery.min.js"></script>
     <script src="assets/js/core/popper.min.js"></script>
