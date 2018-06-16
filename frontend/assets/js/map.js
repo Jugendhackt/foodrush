@@ -1,3 +1,4 @@
+var axios = "https://unpkg.com/axios/dist/axios.min.js";
 var mymap = L.map('mapid').setView([50.110, 8.682], 13);50.110
 var markers=[];
 
@@ -9,7 +10,17 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 }).addTo(mymap);
 
 
+
 function addMarker(location){
   var marker = L.marker([location.long,location.lat]).addTo(mymap);
   markers.push(marker);
   }
+
+axios.get('http://localhost:3000/bestellungen')
+.then(function (response) {
+  console.log(response);
+  for (index in response.data){
+    var item = response.data[index];
+    console.log(item.lieferadresse);
+  }
+})
