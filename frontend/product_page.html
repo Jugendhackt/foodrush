@@ -57,15 +57,15 @@
       <div class="row">
          <div class="col-md-10 ml-auto mr-auto">
             <div class="card card-signup">
-               <h1 class="card-title text-center">Profile</h1>
+               <h1 class="card-title text-center">Profil</h1>
                <div class="card-body">
                     <div class="row">
                             <div class="col-md-5 mr-auto">
-                               <image style="margin-left:50px" src="assets/img/testpic.png" height=256px width=256px></image>
+                               <image style="margin-left:50px" src="assets/img/karline.png" height=256px width=256px></image>
                             </div>
                          <div class="col-md-5 mr-auto">
                             <br><br>
-                            <h2 class="text-center"><b>{{message}}</b></h2>
+                            <h2 class="text-center"><b>Karline</b></h2>
                             <h3 class="text-center"> Beigetreten Juni 2018</h3>
                          </div>
                          </div>
@@ -90,14 +90,14 @@
                                                 <div class="card-body">
                                                      <div class="row">
                                                             <div class="col-md-2">
-                                                                    <image src="assets/img/coke.png" height=128pxpx width=128pxpx></image>
+                                                                    <image style="margin-top: 0.25em;" src="assets/img/club-mate.jpg" height=128px width=128px></image>
                                                             </div>
-                                                            <div class="col-md-5 ml-auto mr-auto" data-toggle="tooltip" data-placement="top" title="GEILE COKE AMK">
-                                                                 <h4><b>Coca Cola</b></h4> 
-                                                                   <h5>Totalpreis: 4 €, Gewinn 2 €</h5>
-                                                                   <h5>Zeitfenster: 50 min</h5>
+                                                            <div class="col-md-6 ml-auto mr-auto" data-toggle="tooltip" data-placement="top" title="Der Mate-Tee (synonym Mate, Matetee) ist ein Aufgussgetränk aus den kleingeschnittenen trockenen Blättern des Mate-Strauchs Ilex paraguariensis. Das Getränk ist in Südamerika verbreitet.">
+                                                                 <h3><b>Club Mate</b></h4> 
+                                                                   <h5>Totalpreis: {{getPrice}} € <br>Gewinn {{getPrice - getNormalPrice}} €</h5>
+                        
                                                             </div>
-                                                            <div style="margin-top: 2.6em; margin-right: 1 em" class="col-md-2 ml-auto mr-auto">
+                                                            <div style="margin-top: 2.6em; margin-right: 10 px;" class="col-md-3 ml-auto mr-auto">
                                                                     <button type="button" class="btn btn-success">Besorgen</button>
                                                                </div>
                                                             </div>
@@ -125,12 +125,11 @@
       
       <!--   Core JS Files   -->
       <script src="assets/js/core/jquery.min.js"></script>
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
       <script src="assets/js/core/main.js"></script>
       <script src="assets/js/core/popper.min.js"></script>
       <script src="assets/js/bootstrap-material-design.js"></script>
-      <!--  Google Maps Plugin  -->
-      <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
       <!--  Plugin for Date Time Picker and Full Calendar Plugin  -->
       <script src="assets/js/plugins/moment.min.js"></script>
       <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
