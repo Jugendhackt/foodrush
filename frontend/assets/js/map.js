@@ -9,7 +9,8 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 }).addTo(mymap);
 
 function addMarker(long, lat){
-  var marker = L.marker([long,lat]).addTo(mymap);
+  var marker = L.marker([long,lat]).addTo(mymap)
+  .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
   markers.push(marker);
   }
 

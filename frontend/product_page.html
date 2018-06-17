@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -31,23 +30,13 @@
                   <a href="index.html" class="navbar-brand">FoodRush</a>
                </div>
                <div class="collapse navbar-collapse" id="navigation-example2">
-                  <ul class="navbar-nav ml-auto">
-                     <li class="nav-item">
-                        <a href="https://twitter.com/CreativeTim" class="nav-link">
-                        <i class="fa fa-twitter"></i>
-                        </a>
-                     </li>
-                     <li class="nav-item">
-                        <a href="https://www.facebook.com/CreativeTim" class="nav-link">
-                        <i class="fa fa-facebook-square"></i>
-                        </a>
-                     </li>
-                     <li class="nav-item">
-                        <a href="https://www.instagram.com/CreativeTimOfficial" class="nav-link">
-                        <i class="fa fa-instagram"></i>
-                        </a>
-                     </li>
-                  </ul>
+                        <ul class="navbar-nav ml-auto">
+                                        <li class="nav-item">
+                                           <a href="https://www.instagram.com/Jugendhackt/Foodrush" class="nav-link">
+                                           <i class="fa fa-github"></i>
+                                           </a>
+                                        </li>
+                                     </ul>
                </div>
             </div>
          </nav>
@@ -71,15 +60,23 @@
                          </div>
                          <h2 class="card-title text-center">Persönliche Informationen</h2>
                          <div class="row">
-                            <div class="col-md-7 mr-auto">
+                            <div class="col-md-12">
                                <div class="row">
-                                  <div class="col-md mr-auto">
+                                  <div class="col-md-5">
                                      <h3 class="text-center"><b>Wohnort:</h3>
                                   </div>
-                                  <div class="col-md mr-auto">
+                                  <div class="col-md-50">
                                      <h3>Frankfurt</h3>
                                   </div>
                             </div>
+                            <div class="row">
+                                        <div class="col-md-5">
+                                           <h3 class="text-center"><b>Geboren:</h3>
+                                        </div>
+                                        <div class="col-md-50">
+                                           <h3>nicht in diesem Universum</h3>
+                                        </div>
+                                  </div>
                          </div>
                          </div>
                          <br>
@@ -97,9 +94,9 @@
                                                                    <h5>Totalpreis: {{getPrice}} € <br>Gewinn {{getPrice - getNormalPrice}} €</h5>
                         
                                                             </div>
-                                                            <div style="margin-top: 2.6em; margin-right: 10 px;" class="col-md-3 ml-auto mr-auto">
-                                                                    <button type="button" class="btn btn-success">Besorgen</button>
-                                                               </div>
+                                                            <div style="margin-top: 2.7em; margin-right: 10 px;" class="col-md-3 ml-auto mr-auto">
+                                                                    <button data-toggle="modal" data-target="#successModal" type="button" class="btn btn-success">Annehmen</button>
+                                                            </div>
                                                             </div>
                                                 </div>
                                         </div>
@@ -149,6 +146,24 @@
       <script src="assets//js/vertical-nav.js"></script>
       <!-- Material Kit Core initialisations of plugins and Bootstrap Material Design Library -->
       <script src="assets/js/material-kit.js?v=2.0.3"></script>
+      <div class="modal fade" id="successModal" role="dialog">
+                <div class="modal-dialog .modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                        <h3 class="modal-title text-centered" id="exampleModalLabel"><b>Erfolgreich <i class="material-icons">check</i></b></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body" style="font-size: 15px">
+                        Liefere den Artikel im vorgegebenen Zeitfenster von 30 Minuten!
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-info btn-round" data-dismiss="modal">Close</button>
+                        </div>
+                        </div>
+                </div>
+                </div>
    </body>
 </html>
 

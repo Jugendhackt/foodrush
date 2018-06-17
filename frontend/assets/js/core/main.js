@@ -1,4 +1,5 @@
 
+
 var url_string = window.location.href;
 var url = new URL(url_string);
 var id = url.searchParams.get("id");
@@ -8,7 +9,10 @@ var app = new Vue({
     el: '#app',
     data: {
       offerJson: [],
-      foodJson: []
+      foodJson: [],
+      makeVisible: function(){
+          $("#success").addClass("show");
+      }
     },
     mounted () {
       axios
@@ -32,7 +36,8 @@ var app = new Vue({
       },
       getNormalPrice () {
         return this.foodJson["preis"]
-      }
+      },
+    
     },
   })
  

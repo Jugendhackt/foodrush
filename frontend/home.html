@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
@@ -27,26 +26,32 @@
     crossorigin=""></script>
 
     <link href="assets/css/map.css" rel="stylesheet">
-
+    <style>
+      #placeholder{
+        margin-bottom: 300px
+      }
+    </style>
 </head>
-
-<body class="profile-page ">
-    <nav class="navbar navbar-color-on-scroll navbar-transparent    fixed-top  navbar-expand-lg " color-on-scroll="100" id="sectionsNav">
-        <div class="container">
-          <div class="dropdown show">
-            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              menu
-            </a>
-
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item" href="home.html">Home</a>
+<body class="profile-page" style="background-image: url(assets/img/softdrinks.jpg); background-size: cover; background-position: top center;">
+      <nav id="sectionsNav" class="navbar navbar-color-on-scroll navbar-transparent    fixed-top  navbar-expand-lg ">
+         <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-translate">
+               <a href="index.html" class="navbar-brand">FoodRush</a>
             </div>
-          </div>
-        </div>
-    </nav>
-
-    <div class="page-header" data-parallax="true" style="background-image: url('assets/img/mypicture1.jpg');"></div>
-    <div class="main main-raised">
+            <div class="collapse navbar-collapse" id="navigation-example2">
+               <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                     <a href="https://www.instagram.com/Jugendhackt/Foodrush" class="nav-link">
+                     <i class="fa fa-github"></i>
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+  <div id="placeholder"></div>
+  <div class="main main-raised">
         <div class="profile-content">
             <div class="container">
                     <div class="col-md-6 ml-auto mr-auto">
@@ -63,12 +68,18 @@
                 <div class="col-md-2.5 ml-auto mr-auto">
                     <h1 class="title">Map</h1>
                 </div>
+                </div>
+                <div class="row">
+                <div class="col-md-2.5 ml-auto mr-auto">
+                    <h3 class="title">Hier siehst du alle lokalen Angebote</h1>
+                </div>
               </div>
             </div>
             <div class="container">
               <div class="row">
                 <div class="col-md-12 ml-auto mr-auto">
                   <div id="mapid"></div>
+                  <br><br><br>
                 </div>
               </div>
             </div>
