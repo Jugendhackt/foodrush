@@ -14,6 +14,9 @@ function addMarker(long, lat){
   }
 
 
+
+
+
 axios.get('http://localhost:3000/bestellungen')
 .then(function (response) {
   console.log(response);
