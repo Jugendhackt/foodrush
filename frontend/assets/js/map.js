@@ -10,7 +10,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 
 function addMarker(long, lat){
   var marker = L.marker([long,lat]).addTo(mymap)
-  .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+  .bindPopup('Ware: Club Mate <br> Kunde: <a href="product_page.html?id=5b255423dd165d57b707a990">Karline</a>')
   markers.push(marker);
   }
 
