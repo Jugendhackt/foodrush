@@ -9,10 +9,10 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 }).addTo(mymap);
 
 function addMarker(long, lat){
-  var marker = L.marker([long,lat]).addTo(mymap)
-  .bindPopup('Ware: Club Mate <br> Kunde: <a href="product_page.html?id=5b255423dd165d57b707a990">Karline</a>')
+  var marker = L.marker([long,lat]).addTo(mymap);
   markers.push(marker);
   }
+
 
 
 axios.get('http://localhost:3000/bestellungen')
